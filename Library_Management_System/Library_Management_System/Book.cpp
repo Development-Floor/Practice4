@@ -2,4 +2,4 @@
 
 Book::Book(string title, string author):
 	title(title),
-	author(author) { }
+	author(author) {}
