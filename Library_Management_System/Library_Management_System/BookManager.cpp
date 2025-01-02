@@ -1,11 +1,8 @@
 #include "BookManager.h"
 #include <iostream>
 
-BookManager::BookManager(): size(0) {}
-
 void BookManager::addBook(string title, string author) {
 	books.push_back(Book(title, author));
-	++size;
 }
 
 void BookManager::displayAllBooks() {
