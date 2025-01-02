@@ -11,4 +11,5 @@ class BookManager {
 
 public:
 	BookManager();
+	void addBook(string title, string author);
 };
