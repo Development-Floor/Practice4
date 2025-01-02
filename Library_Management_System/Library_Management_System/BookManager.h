@@ -18,4 +18,5 @@ public:
 
 	// 도전 과제
 	Book* findByTitle(string title); //제목으로 찾기 없으면, NULL 반환
+	Book* findByAuthor(string author); //이름으로 찾기 없으면, NULL 반환
 };

@@ -51,3 +51,13 @@ Book* BookManager::findByTitle(string title) {
 
 	return NULL;
 }
+
+Book* BookManager::findByAuthor(string author) {
+	for (int i = 0; i < books.size(); i++) {
+		if (books[i].author.compare(author) == 0) {
+			return &books[i];
+		}
+	}
+
+	return NULL;
+}
