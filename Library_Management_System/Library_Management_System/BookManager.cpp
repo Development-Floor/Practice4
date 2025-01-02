@@ -41,3 +41,13 @@ void BookManager::searchByAuthor(string author) {
 	}
 	cout << "--------------------\n" << endl;
 }
+
+Book* BookManager::findByTitle(string title) {
+	for (int i = 0; i < books.size(); i++) {
+		if (books[i].title.compare(title) == 0) {
+			return &books[i];
+		}
+	}
+
+	return NULL;
+}
