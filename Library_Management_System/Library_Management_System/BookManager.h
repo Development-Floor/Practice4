@@ -13,4 +13,5 @@ public:
 	BookManager();
 	void addBook(string title, string author);
 	void displayAllBooks();
+	void searchByTitle(string title);
 };

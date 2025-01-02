@@ -15,3 +15,15 @@ void BookManager::displayAllBooks() {
 		cout << "历磊: " << book.author << "\n" << endl;
 	}
 }
+
+void BookManager::searchByTitle(string title) {
+	cout << "力格 八祸: " << title << endl;
+	cout << "--------------------" << endl;
+	for (Book book : books) {
+		if ((book.title).compare(title) == 0) {
+			cout << "力格: " << book.title << endl;
+			cout << "历磊: " << book.author << "\n" << endl;
+			return;
+		}
+	}
+}
