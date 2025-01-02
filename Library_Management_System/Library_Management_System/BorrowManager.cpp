@@ -13,3 +13,11 @@ void BorrowManager::borrowBook(string title) {
 		--stock[title];
 	}
 }
+
+void BorrowManager::returnBook(string title) {
+	if (stock.find(title) == stock.end()) {
+		return;
+	}
+
+	++stock[title];
+}

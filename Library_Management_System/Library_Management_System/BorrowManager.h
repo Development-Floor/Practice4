@@ -11,4 +11,5 @@ class BorrowManager {
 public:
 	void initializeStock(Book book, int quantity = 3);
 	void borrowBook(string title);
+	void returnBook(string title);
 };
