@@ -20,14 +20,16 @@ void BorrowManager::returnBook(string title) {
 		return;
 	}
 
-	++stock[title];
+	if (stock[title] < 3) {
+		++stock[title];
+	}
 }
 
 void BorrowManager::displayStock() {
 	cout << "------- 대여 -------";
 
 	if (stock.empty()) {
-		cout << "\n 없음.\n" << endl;
+		cout << "\n\n 없음.\n" << endl;
 	}
 	else {
 		for (pair<string, int> book : stock) {
