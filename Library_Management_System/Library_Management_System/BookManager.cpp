@@ -7,6 +7,12 @@ void BookManager::addBook(string title, string author) {
 
 void BookManager::displayAllBooks() {
 	cout << "------- 格废 -------";
+
+	if (books.size() == 0) {
+		cout << "\n\n绝澜.\n\n--------------------\n" << endl;
+		return;
+	}
+
 	for (Book book : books) {
 		cout << "\n力格: " << book.title << endl;
 		cout << "历磊: " << book.author << endl;
