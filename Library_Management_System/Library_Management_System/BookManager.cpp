@@ -7,6 +7,12 @@ void BookManager::addBook(string title, string author) {
 
 void BookManager::displayAllBooks() {
 	cout << "------- 格废 -------";
+
+	if (books.size() == 0) {
+		cout << "\n\n绝澜.\n\n--------------------\n" << endl;
+		return;
+	}
+
 	for (Book book : books) {
 		cout << "\n力格: " << book.title << endl;
 		cout << "历磊: " << book.author << endl;
@@ -40,4 +46,24 @@ void BookManager::searchByAuthor(string author) {
 		}
 	}
 	cout << "--------------------\n" << endl;
+}
+
+Book* BookManager::findByTitle(string title) {
+	for (int i = 0; i < books.size(); i++) {
+		if (books[i].title.compare(title) == 0) {
+			return &books[i];
+		}
+	}
+
+	return NULL;
+}
+
+Book* BookManager::findByAuthor(string author) {
+	for (int i = 0; i < books.size(); i++) {
+		if (books[i].author.compare(author) == 0) {
+			return &books[i];
+		}
+	}
+
+	return NULL;
 }
