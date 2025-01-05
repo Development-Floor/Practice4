@@ -6,11 +6,12 @@
 using namespace std;
 
 class BorrowManager {
+private:
 	unordered_map<string, int> stock;
 
 public:
 	void initializeStock(Book book, int quantity = 3);
-	void borrowBook(string title);
-	void returnBook(string title);
+	bool borrowBook(string title);
+	bool returnBook(string title);
 	void displayStock();
 };

@@ -6,6 +6,7 @@
 using namespace std;
 
 class BookManager {
+private:
 	vector<Book> books;
 
 public:
