@@ -16,8 +16,8 @@ int main() {
 	BookManager bookManager;
 
 	// 책 10개 추가
-	for (int i = 1; i <= 10; i++) {
-		bookManager.addBook("Book" + to_string(i), "Author" + to_string(i));		//도서관에 책 추가
+	for (int i = 1; i <= 10; i++) { //도서관에 책 추가
+		bookManager.addBook("Book" + to_string(i), "Author" + to_string(i));
 	}
 
 	// 현재 책 목록 출력
@@ -112,13 +112,13 @@ int main() {
 			cout << "\n제목: ";
 			cin >> title;
 
-			if (bookManager2.findByTitle(title) == NULL) {
+			if (bookManager2.findByTitle(title) == NULL || !borrowManager.borrowBook(title)) {
 				cout << "\n찾는 책이 도서관에 없습니다.\n" << endl;
 				continue;
 			}
 
-			borrowManager.borrowBook(title); // 출력문은 없지만, 목록에서는 --
-			cout << endl;
+			cout << "\n" << title << "책을 빌렸습니다.\n" << endl;
+
 			continue;
 		}
 
@@ -127,13 +127,13 @@ int main() {
 			cout << "\n저자: ";
 			cin >> author;
 
-			if (bookManager2.findByAuthor(author) == NULL) {
+			if (bookManager2.findByAuthor(author) == NULL || !borrowManager.borrowBook(bookManager2.findByAuthor(author)->title)) {
 				cout << "\n찾는 책이 도서관에 없습니다.\n" << endl;
 				continue;
 			}
 
-			borrowManager.borrowBook(bookManager2.findByAuthor(author)->title);
-			cout << endl;
+			cout << "\n" << title << "책을 빌렸습니다.\n" << endl;
+
 			continue;
 		}
 
@@ -142,13 +142,13 @@ int main() {
 			cout << "\n제목: ";
 			cin >> title;
 
-			if (bookManager2.findByTitle(title) == NULL) {
+			if (bookManager2.findByTitle(title) == NULL || !borrowManager.returnBook(title)) {
 				cout << "\n해당 책은 도서관의 책이 아닙니다.\n" << endl;
 				continue;
 			}
 
-			borrowManager.returnBook(title); // 출력문은 없지만 목록에서 ++
-			cout << endl;
+			cout << "\n" << title << "책을 반납했습니다.\n" << endl;
+
 			continue;
 		}
 	}

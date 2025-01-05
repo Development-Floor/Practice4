@@ -5,24 +5,30 @@ void BorrowManager::initializeStock(Book book, int quantity) {
 	stock[book.title] = quantity;
 }
 
-void BorrowManager::borrowBook(string title) {
+bool BorrowManager::borrowBook(string title) {
 	if (stock.find(title) == stock.end()) {
-		return;
+		return false;
 	}
 
 	if (stock[title] > 0) {
 		--stock[title];
+		return true;
 	}
+
+	return false;
 }
 
-void BorrowManager::returnBook(string title) {
+bool BorrowManager::returnBook(string title) {
 	if (stock.find(title) == stock.end()) {
-		return;
+		return false;;
 	}
 
 	if (stock[title] < 3) {
 		++stock[title];
+		return true;
 	}
+	
+	return false;
 }
 
 void BorrowManager::displayStock() {
